@@ -20,13 +20,13 @@ prod_jewelery_response = requests.get(f"{BASE}/products/category/jewelery")
 prod_jewelery_data = prod_jewelery_response.json()
 print("Все продукты категории jewelery")
 for prod in prod_jewelery_data:
-    print(prod)
+    print(f"{prod['title']} - {prod['category']}")
 print()
 
 users_response = requests.get(f"{BASE}/users")
 print("Все пользователи")
 for user in users_response.json():
-    print(user)
+    print(f"{user['name']['firstname']} {user['name']['lastname']}")
 print()
 
 new_user = {
